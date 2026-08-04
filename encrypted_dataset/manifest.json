@@ -1,0 +1,11 @@
+{
+    "description": "Encrypted face recognition dataset",
+    "algorithm": "Fernet (AES-128-CBC + HMAC-SHA256)",
+    "persons": {
+        "alice": 10,
+        "bob": 10,
+        "charlie": 10
+    },
+    "total_files": 30,
+    "total_encrypted_bytes": 9523344
+}
