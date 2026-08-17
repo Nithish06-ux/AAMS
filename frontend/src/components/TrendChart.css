@@ -1,0 +1,39 @@
+/* ── TrendChart ────────────────────────────── */
+.trend-chart-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  backdrop-filter: blur(10px);
+  margin-bottom: 1.5rem;
+}
+
+.trend-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.trend-chart-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.trend-chart-body {
+  height: 250px;
+  position: relative;
+}
+
+.chart-loading {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  gap: 0.5rem;
+}

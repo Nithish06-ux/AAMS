@@ -1,0 +1,260 @@
+/* ── StudentDashboard ───────────────────────── */
+.student-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dashboard-header {
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.section-heading {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+}
+
+/* Today's Summary Grid */
+.today-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.today-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  backdrop-filter: blur(8px);
+}
+
+.today-card--empty {
+  grid-column: 1 / -1;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.today-card__subject {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.today-card__period {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.6rem;
+}
+
+/* Subject Percentage Cards & Warning Pills */
+.subject-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.subject-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  backdrop-filter: blur(10px);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.subject-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.subject-card--warning {
+  border-color: rgba(245, 158, 11, 0.4);
+  background: rgba(245, 158, 11, 0.04);
+}
+
+.subject-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.subject-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.warning-pill {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.18);
+  color: var(--accent-amber);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  white-space: nowrap;
+}
+
+.subject-card__percentage {
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.35rem;
+}
+
+.subject-card__footer {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.subject-card-empty {
+  grid-column: 1 / -1;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 1.5rem;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+/* Button Raise a Flag */
+.btn-flag {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--accent-amber);
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-flag:hover {
+  background: rgba(245, 158, 11, 0.22);
+  border-color: rgba(245, 158, 11, 0.5);
+  transform: translateY(-1px);
+}
+
+.text-muted-read {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Modal Styling */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-card {
+  background: #111627;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.modal-header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: var(--text-primary);
+}
+
+.modal-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  outline: none;
+  resize: vertical;
+}
+
+.form-textarea:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.btn--secondary {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
